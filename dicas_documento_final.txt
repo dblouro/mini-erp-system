@@ -1,0 +1,189 @@
+Sistema de Gestão de Artigos
+
+Documentação Técnica e Académica
+
+1. Introdução
+
+O presente documento descreve de forma detalhada o funcionamento, arquitetura e funcionalidades do Sistema de Gestão de Artigos, uma aplicação desenvolvida em Python com o objetivo de apoiar processos de inventário, análise de stock, exportação de dados e visualização gráfica. O sistema foi concebido para ser modular, intuitivo e extensível, permitindo a sua utilização em ambientes académicos, empresariais ou pessoais.
+
+A aplicação utiliza estruturas de dados eficientes, bibliotecas externas para geração de relatórios e gráficos, e uma interface baseada em menus que facilita a interação com o utilizador.
+
+2. Estrutura de Dados
+
+O sistema utiliza um dicionário principal denominado artigos, onde cada chave corresponde ao nome de um artigo e o valor é outro dicionário contendo os atributos do mesmo.
+
+2.1 Estrutura Interna do Dicionário
+
+Cada artigo contém os seguintes campos:
+
+nome — Identificação textual do artigo.
+
+quantidade — Quantidade existente em stock.
+
+valor — Preço unitário do artigo.
+
+fornecedores — Entidade responsável pelo fornecimento.
+
+categorias — Categoria ou tipo do artigo.
+
+local_armz — Localização física no armazém.
+
+data_validade — Data de validade calculada automaticamente.
+
+stock_min — Quantidade mínima para alerta de reposição.
+
+Esta estrutura permite um acesso rápido e organizado aos dados, facilitando operações de consulta, alteração e exportação.
+
+3. Funcionalidades do Sistema
+
+O sistema está dividido em três grandes áreas funcionais: Gestão de Dados, Exportação de Dados e Gestão de Stocks.
+
+3.1 Gestão de Dados
+
+Inclui operações CRUD (Create, Read, Update, Delete):
+
+3.1.1 Registar Artigos
+
+O utilizador introduz os dados do artigo, incluindo quantidade, preço, fornecedor, categoria e localização. A data de validade é calculada automaticamente com base no número de dias introduzido.
+
+3.1.2 Consultar Artigos
+
+Apresenta todos os artigos registados, com todos os seus atributos.
+
+3.1.3 Alterar Artigos
+
+Permite modificar qualquer campo. A validade pode ser alterada indicando um número de dias, sendo convertida para uma nova data.
+
+3.1.4 Eliminar Artigos
+
+Remove um artigo selecionado pelo utilizador através do seu ID.
+
+4. Exportação e Importação de Dados
+
+O sistema suporta múltiplos formatos de exportação, permitindo a integração com outras ferramentas.
+
+4.1 Exportação Pickle
+
+Guarda o dicionário completo num ficheiro .pk1, permitindo backup e recuperação.
+
+4.2 Importação Pickle
+
+Carrega um ficheiro .pk1 previamente guardado, restaurando o inventário.
+
+4.3 Exportação Word
+
+Gera um documento .docx com todos os artigos listados.
+
+4.4 Exportação PDF
+
+Cria um relatório em formato PDF com todos os dados dos artigos.
+
+4.5 Exportação Excel
+
+Gera um ficheiro .xlsx com cabeçalhos formatados e colunas ajustadas automaticamente.
+
+4.6 Relatório Sweetviz
+
+Produz um relatório analítico interativo em HTML, contendo estatísticas, gráficos e correlações.
+
+5. Gestão de Stocks e Estatísticas
+
+O sistema inclui ferramentas de análise quantitativa e visual.
+
+5.1 Cálculo do Valor Total do Stock
+
+Soma o valor total de todos os artigos: [ \text{Valor Total} = \sum (quantidade \times valor) ]
+
+5.2 Verificação de Stock Mínimo
+
+Identifica artigos cujo stock está abaixo ou igual ao limite mínimo definido.
+
+5.3 Estatísticas de Preços
+
+Calcula:
+
+Média
+
+Mediana
+
+Desvio padrão
+
+Preço mínimo
+
+Preço máximo
+
+Além disso, apresenta o valor total individual de cada artigo.
+
+6. Visualização Gráfica
+
+O sistema integra diferentes tipos de gráficos para facilitar a interpretação dos dados.
+
+6.1 Gráfico Circular
+
+Representa a distribuição percentual das quantidades por artigo.
+
+6.2 Gráfico de Barras por Categoria
+
+Agrupa categorias repetidas e apresenta o valor total por categoria.
+
+6.3 Diagrama Turtle
+
+Desenha barras horizontais representando o preço de cada artigo, com escala automática e cores distintas.
+
+7. Navegação por Menus
+
+O programa utiliza uma interface textual baseada em menus:
+
+7.1 Menu Principal
+
+Gestão de Dados
+
+Exportação de Dados
+
+Gestão de Stocks
+
+Terminar Programa
+
+7.2 Submenu de Gestão
+
+Permite registar, consultar, alterar e eliminar artigos.
+
+7.3 Submenu de Exportação
+
+Inclui todas as opções de exportação e importação.
+
+7.4 Submenu de Stocks
+
+Inclui cálculos, estatísticas e gráficos.
+
+8. Validação e Tratamento de Erros
+
+O sistema inclui validações para:
+
+Entradas numéricas inválidas
+
+IDs inexistentes
+
+Ficheiros não encontrados
+
+Conversão incorreta de datas
+
+Estas validações aumentam a robustez e fiabilidade do programa.
+
+9. Possíveis Melhorias Futuras
+
+Integração com base de dados SQL
+
+Interface gráfica (GUI) - uma versão com interface gráfica (Tkinter)
+
+Sistema de alertas por email
+
+Exportação automática agendada
+
+Dashboard interativo
+
+10. Conclusão
+
+O Sistema de Gestão de Artigos constitui uma solução completa e extensível para controlo de inventário, combinando funcionalidades de gestão, análise estatística, visualização gráfica e exportação de dados. A sua estrutura modular e clara torna-o adequado para fins académicos e profissionais.
+
+Fim da documentação académica.
