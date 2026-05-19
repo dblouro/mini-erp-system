@@ -1,0 +1,8 @@
+pandas>=2.0
+matplotlib>=3.5
+seaborn>=0.12
+openpyxl>=3.0
+python-docx>=0.8
+fpdf>=1.7
+sweetviz>=2.0
+numpy>=1.20
